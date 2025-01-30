@@ -8,9 +8,9 @@ import java.util.List;
 
 public interface LeaveRepository extends JpaRepository<LeaveModel, Long> {
 
-    @Query("SELECT l from LeaveModel l WHERE l.isAccepted = 'true'")
+    @Query("SELECT l from LeaveModel l WHERE l.isAccepted = true")
     List<LeaveModel> findAllAcceptedLeave();
 
-    @Query("SELECT l from LeaveModel l WHERE l.isAccepted = 'false'")
+    @Query("SELECT l from LeaveModel l WHERE l.isAccepted = false")
     List<LeaveModel> findAllRejectedLeave();
 }
